@@ -8,14 +8,13 @@ const hamburgerBtn = document.querySelector('.hamburger'),
         if(navLeft < 0)  {
             navMenu.classList.add('show');
             header.classList.add('fixed2')
-            document.body.classList.add("active");
+            
         }
 })
 
       navClose.addEventListener('click', ()=>{
           navMenu.classList.remove("show");
           header.classList.remove('fixed2')
-          document.body.classList.remove("active");
       })
   
       $(()=>{
@@ -31,7 +30,6 @@ const hamburgerBtn = document.querySelector('.hamburger'),
         $(".header .nav-menu a").click(function (Kirchiespy) {
             if($(window).width() < 778){
                 $(".header .nav-menu").removeClass('show')
-                document.body.classList.remove("active");
             }
         })
         $("#testi-slider").owlCarousel({
