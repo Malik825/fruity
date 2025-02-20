@@ -45,7 +45,7 @@ h1, h2, h3{
     font-family: 'Oswald', sans-serif;
 }
 .container{
-    max-width: 1140px;
+    max-width: 1100px;
     margin: auto;
     padding: 0 15px;
 }
@@ -445,7 +445,7 @@ background:#7eb106;
     /* display: none; */
 }
 .subscription{
-    padding: 80px 0 120px;
+    padding: 70px 0 80px;
 }
 .subscription .grid{
     border-radius: 10px;
@@ -455,7 +455,7 @@ background:#7eb106;
     display: grid;
     padding: 1rem 2.5rem;
     column-gap: 5rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
 }
 .subscription .subscribe{
     color: #fff;
@@ -470,37 +470,72 @@ background:#7eb106;
 .subscribe p{
     font-size: 18px;
 }
-
-.subscription .input .input-box{
-padding: 22px;
-background-color: #fff;
-position: relative;
-border-radius: 5px;
+.subscription form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Center aligns the input and button vertically */
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    position: relative;
 }
-.subscription .input  .input-box input{
-    padding: .6rem 0;
-    width: 30%;
+
+.subscription form input {
+    width: 100%;
     border: none;
     outline: none;
-transition: all .5s ease;
+    background: transparent;
+    padding-right: 40px; /* Add padding to avoid overlap with button */
+    height:25px;
+    padding-left:18px;
+    font-size: 16px; /* Increase font size for better readability */
 }
-.subscription .input .input-box input:focus{
-    border-bottom: 2px solid var(--default);
-    width:60%;
-}
-.subscription .input .input-box button{
-    background-color: var(--default);
-    color: #fff;
-    border: none;
-    padding: 1rem 45px;
+
+.subscription form button {
     position: absolute;
-    cursor: pointer;
-    top: 15px;
-    right: 15px;
+    right: -30px; /* Adjust button position */
+    top: 50%;
+    transform: translateY(-50%);
+    display:block;
+    border: none; /* Remove border */
+    background:transparent;
 
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background 0.3s; /* Smooth background transition */
 }
-.subscription .input .input-box button:focus{
-    outline: none;
+.subscription form button > i{
+    
+    background: var(--default);
+    color: #fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    width: 35px !important; /* Slightly larger for better clickability */
+    height: 35px !important;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .subscription form {
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+
+    .subscription form input {
+        font-size: 14px; /* Slightly reduce font size */
+    }
+
+    .subscription form button {
+        width: 30px; /* Adjust button size */
+        height: 30px;
+        right:5px;
+        top: 20%;
+    transform: translateY(-50%);
+        
+    }
 }
 .footer{
     padding: 80px 0 20px;
@@ -744,6 +779,14 @@ color: #333 !important;
     .footer .grid,
     .product-section .grid{
         grid-template-columns: repeat(1, 1fr) !important;
+    }
+     .elegant-inner a.btn{
+        position:absolute;
+        bottom:8px;
+        left:10px;
+        font-size:14px;
+        padding:5px 12px;
+        width:fit-content;
     }
 }
 @media(max-width:450px){
